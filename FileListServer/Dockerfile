@@ -14,5 +14,6 @@ WORKDIR /app
 COPY --from=build /app/target/FileListServer-1.0.0.jar /app
 COPY --from=build /app/target/lib /app/lib
 COPY --from=build /app/tc /app/tc
+COPY --from=clone /app/cs447-547/FileListServer/files /app/files
 RUN apk update && apk add bash iproute2
 

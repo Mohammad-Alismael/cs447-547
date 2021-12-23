@@ -25,6 +25,7 @@ public class dummyClient {
          byte[] receiveData=new byte[ResponseType.MAX_RESPONSE_SIZE];
          DatagramPacket receivePacket=new DatagramPacket(receiveData, receiveData.length);
          dsocket.receive(receivePacket);
+        System.out.println("it's working");
          ResponseType response=new ResponseType(receivePacket.getData());
          loggerManager.getInstance(this.getClass()).debug(response.toString());
 	}
